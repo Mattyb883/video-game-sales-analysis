@@ -1,69 +1,69 @@
-# Ice Video Game Analysis
+# Ice Video Game Sales Analysis
 
-## Project Overview
-This project analyzes video game sales data to identify factors contributing to game success across platforms, genres, and regions. By examining trends, regional preferences, and the impact of user and critic reviews, this analysis provides strategic insights to inform game development, marketing, and release strategies for Ice, an international video game store.
+This project analyzes video game sales data to identify trends, forecast potential high-performing games, and inform strategic decisions for platform selection, marketing, and development. The dataset includes sales figures, user and critic reviews, ESRB ratings, genres, and platform information.
 
-## Objectives
-- Identify platform trends and lifespan to target profitable platforms for future releases.
-- Assess genre profitability to prioritize development in high-demand categories.
-- Analyze regional preferences across North America, Europe, and Japan for region-specific strategies.
-- Evaluate the influence of critic and user reviews on sales to understand the role of reviews in purchase decisions.
-- Perform hypothesis testing to assess user satisfaction across platforms and genres.
+## Table of Contents
 
-## Dataset Information
-The dataset includes video game sales data from open sources and covers the following fields:
+- [Project Description](#project-description)
+- [Step 1: General Data Overview](#step-1-general-data-overview)
+- [Step 2: Data Preparation](#step-2-data-preparation)
+- [Step 3: Exploratory Data Analysis](#step-3-exploratory-data-analysis)
+  - [Game Releases by Year](#game-releases-by-year)
+  - [Platform Sales and Lifespan](#platform-sales-and-lifespan)
+  - [Sales Distribution by Platform](#sales-distribution-by-platform)
+  - [Review Score Impact](#review-score-impact)
+  - [Genre Profitability](#genre-profitability)
+- [Step 4: Regional User Profiles](#step-4-regional-user-profiles)
+- [Step 5: Hypothesis Testing](#step-5-hypothesis-testing)
+- [Step 6: Project Conclusion](#step-6-project-conclusion)
+- [Technical Notes](#technical-notes)
 
-| Column Name     | Description                                      |
-|-----------------|--------------------------------------------------|
-| `name`          | Game title                                       |
-| `platform`      | Platform (e.g., Xbox, PlayStation)               |
-| `year_of_release` | Year of game release                            |
-| `genre`         | Genre of the game                                |
-| `na_sales`      | North American sales (millions USD)              |
-| `eu_sales`      | European sales (millions USD)                    |
-| `jp_sales`      | Japanese sales (millions USD)                    |
-| `other_sales`   | Sales in other regions (millions USD)            |
-| `critic_score`  | Critic review score (out of 100)                 |
-| `user_score`    | User review score (out of 10)                    |
-| `rating`        | ESRB rating (e.g., E, T, M)                      |
+---
 
-**Note**: All sales figures are represented in **millions of USD**.
+## Project Description
 
-## Project Structure
-The analysis follows these main steps:
-1. **Data Loading and Preparation**: Load and clean the data, handle missing values, and prepare it for analysis.
-2. **Exploratory Analysis**: Examine game releases by year, sales distributions by platform, and genre profitability.
-3. **Regional Profile Analysis**: Identify top platforms and genres in North America, Europe, and Japan and assess the impact of ESRB ratings.
-4. **Review Impact Analysis**: Explore how critic and user reviews influence sales on popular platforms.
-5. **Hypothesis Testing**: Test hypotheses regarding user ratings for platforms and genres to assess user preferences.
-6. **Conclusions and Recommendations**: Summarize findings and provide strategic recommendations for Ice’s future releases and marketing efforts.
+Ice, an online video game store, wants to analyze historical sales data to understand what makes a game successful. By exploring patterns in genre, platform, region, and reviews, this analysis will guide 2017 marketing strategies and future releases.
 
-## Key Findings
-- **Platform Trends**: Platforms with longer lifespans and recent popularity are promising targets. Multi-platform releases increase reach and revenue.
-- **Genre Profitability**: High-demand genres show strong sales, while niche genres with loyal audiences also offer profitability.
-- **Regional Preferences**: Distinct preferences for platforms and genres across regions, with age-related trends highlighted by ESRB ratings.
-- **Impact of Reviews**: Critic reviews moderately impact sales, whereas user reviews show minimal influence on initial purchases.
-- **User Ratings**: No significant difference in user satisfaction between Xbox One and PC; Action and Sports genres show notable differences in user ratings.
+## Step 1: General Data Overview
+Initial inspection of the dataset including column types, structure, and missing values.
 
-## How to Run This Analysis
-1. **Requirements**:
-   - Python 3.x
-   - Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
+## Step 2: Data Preparation
+- Standardized column names
+- Converted datatypes
+- Addressed missing and anomalous values (e.g., `TBD`)
+- Calculated `total_sales` across all regions
 
-2. **To Run**:
-   - Clone this repository:
-     ```bash
-     git clone https://github.com/Mattyb883/ice_video_game_analysis.git
-     cd ice_video_game_analysis
-     ```
-   - Run the Jupyter Notebook `data_analysis.ipynb` to execute the analysis.
+## Step 3: Exploratory Data Analysis
 
-## Repository Structure
-```plaintext
-ice_video_game_analysis/
-│
-├── data_analysis.ipynb      # Jupyter Notebook with full analysis
-├── README.md                # Project overview and instructions
-├── games.csv                # Dataset file (ensure to load in the notebook)
-├── .gitignore               # Ignoring unnecessary files
-└── requirements.txt         # List of libraries needed (optional)
+### Game Releases by Year
+Distribution of game releases across years and assessment of data completeness.
+
+### Platform Sales and Lifespan
+Top-performing platforms, emergence and decline timelines, and relevance for prediction.
+
+### Sales Distribution by Platform
+Box plots of global sales per platform to understand spread and outliers.
+
+### Review Score Impact
+Correlation between user and critic scores vs. global sales across multiple platforms.
+
+### Genre Profitability
+Most and least profitable genres based on total and average sales.
+
+## Step 4: Regional User Profiles
+- Top 5 platforms and genres per region (NA, EU, JP)
+- ESRB rating impact on regional sales
+- Visualized with pie charts for clarity
+
+## Step 5: Hypothesis Testing
+- Tested if Xbox One and PC user ratings are statistically similar
+- Tested if user ratings for Action and Sports genres are statistically different
+- Included null/alternative hypotheses and significance interpretation
+
+## Step 6: Project Conclusion
+Summary of insights, strategic recommendations, and key takeaways for Ice’s business decisions.
+
+## Technical Notes
+- Programming language: Python
+- Libraries used: pandas, matplotlib, seaborn, scipy
+- All monetary figures are in **USD millions**
